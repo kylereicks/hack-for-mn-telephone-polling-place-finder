@@ -53,5 +53,11 @@
 > "Your response did not contain a response to match the house number ranges for your street. Please call us at 651-215-1440 (Metro Area) or 1-877-600-VOTE (Greater MN) and we'll try to help."
 
 ## Polling Place Information
-
-
+- Does session data contain a house number or house number range?
+	- If a house number, reply with confirmation of address.
+	> "For residents who live at 1501 University Ave SE 55414, your voting precinct is Minneapolis Ward 2 Precinct 4, precinct code 1425."
+	- If a house number range, reply with confirmation of address range.
+	> "For house numbers between 1501 and 2218 on University Ave SE and ZIP code 55414, this voting precinct is Minneapolis Ward 2 Precinct 4, precinct code 1425."
+- Display polling place name and address.
+> "You vote at Coffman Union, 300 Washington Avenue SE, Minneapolis, MN 55455."
+- Display districts for this address.
