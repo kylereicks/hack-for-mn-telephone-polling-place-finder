@@ -1,0 +1,44 @@
+function WRITE(TAG NAME):
+	say get_text(KNOWN LANG, TAG NAME)
+ 
+ New Message
+	If ZIP CODE in message: record, continue
+	if HOUSE NUMBER in message: record, continue
+	if STREET NAME in message: record, continue
+	if ZIP CODE and HOUSE NUMBER and STREET NAME know, exit to polling search
+	else exit to Conversational Mode
+Conversational Mode
+	if KNOWN LANG known and not KNOWN LANG == Global
+		KNOWN LANG=Global
+		set KNOWN LANG=ask WRITE(RequestLanguage+Languages)
+		assert get_text(KNOWN LANG, _Supported)==True
+	WRITE WelcomeMessage
+	if ZIP CODE known
+		WRITE ZipCodeSaved
+		exit to Get House Number
+	else
+		WRITE NoZipCodeSaved
+		exit die
+Get House Number
+	if HOUSE NUMBER known and not STREET NAME known
+		WRITE EnterStreet
+	else if not HOUSE NUMBER known and STREET NAME known
+		WRITE EnterBuilding
+	assert ( HOUSE NUMBER known and STREET NAME known )
+	record HOUSE NUMBER or HOUSE NUMBER, continue
+	exit to polling search
+polling search
+	if ZIP CODE valid exit to Street Name Search
+	else
+		WRITE ZipCodeNotFount
+		exit die
+Street Name Search
+	if STREET NAME valid and STREET NAME valid.ZIP CODE exit to House Number Search
+	else
+		WRITE StreetNotFound
+		exit die
+House Number Search
+	if HOUSE NUMBER valid exit to Polling Place
+	else
+		#FIX!!!!!!!
+		exit die

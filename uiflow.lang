@@ -1,0 +1,31 @@
+[Global]
+RequestLanguage=Select Languages, Options:
+Languages=English;Spanish;Somali;Hung
+[English]
+_Supported=True
+WelcomeMessage=Thanks for contacting the Minnesota Office of the Secretary of State! Let's find the polling place information for your precinct.
+NoZipCodeSaved=Please enter your address. Include your house number or building number, your street name, and ZIP code.
+ZipCodeSaved=Please enter your building or house number, and your street name.
+EnterStreet=Please center your street name.
+EnterBuilding=Please enter your building or house number.
+ZipCodeNotFound=There is no information for this ZIP code! Please check your postal address information and try again.
+StreetNotFound=The street name you entered does not exist in your ZIP code. Please call us at 651-215-1440 (Metro Area) or 1-877-600-VOTE (Greater MN) and we'll try to help.
+HouseNumberNotSure=We aren't sure what your house number is. Here are the options for [Street Name].
+Range1=Reply 1 if your house number range is 13-327.
+Range2=Reply 2 if your house number range is 330-410 and an even number.
+Range3=Reply 3 if your house number range is 401-425 and an odd number.
+Range4=Reply 4 if your house number range is 504-818.
+Range5=Reply 5 if your house number range is 915-1029.
+Range6=Reply 6 if your house number range is 1101-1307 and an odd number.
+Range7=Reply 7 if your house number range is 1501-2218.
+Range8=Reply 8 if your house number range is 2221-3430.
+RangeInvalid=Your response did not contain a response to match the house number ranges for your street. Please call us at 651-215-1440 (Metro Area) or 1-877-600-VOTE (Greater MN) and we'll try to help.
+HousePollPlace=For residents who live at %s, your voting precinct is %s Ward %d Precinct %d, precinct code %d.
+RangePollPlace=For house numbers between %d and %d on %s and ZIP code %d, this voting precinct is %s Ward %d Precinct %d, precinct code %d.
+PollPlace=You vote at %s.
+[Spanish]
+_Supported=False
+[Somali]
+_Supported=False
+[Hung]
+_Supported=False
