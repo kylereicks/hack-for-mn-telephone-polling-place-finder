@@ -60,4 +60,4 @@
 	> "For house numbers between 1501 and 2218 on University Ave SE and ZIP code 55414, this voting precinct is Minneapolis Ward 2 Precinct 4, precinct code 1425."
 - Display polling place name and address.
 > "You vote at Coffman Union, 300 Washington Avenue SE, Minneapolis, MN 55455."
-- Display districts for this address.
+
