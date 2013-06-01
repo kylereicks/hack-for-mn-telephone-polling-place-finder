@@ -12,15 +12,19 @@
 		- If no, then switch to conversational address entry.
 
 ## Conversational Address Entry
-> "Thanks for contacting the Minnesota Office of the Secretary of State! We can find the polling place information for your precinct."
+> "Thanks for contacting the Minnesota Office of the Secretary of State! Let's find the polling place information for your precinct."
 - If ZIP code is not already saved for this session, return response and end session:
 	- "Please enter your address. Include your house number or building number, your street name, and ZIP code."
 - If ZIP code is already saved for this session:
-	- "Please enter your building or house number, and your street name."
+	- If both house number and street name are blank, send request.
+		- "Please enter your building or house number, and your street name."
+	- If house number exists but street name is blank, send request.
+		- "Please center your street name."
+	- If street name exists but house number is blank, send request.
+		- "Please enter your building or house number."
 	- Filter input by address and street name.
 		- Detecting a house number? If yes, then record house number and continue.
 		- Detecting a street name? If yes, then record street name and exit to polling search.
-
 
 ## Polling Search
 - Search database for ZIP code.
