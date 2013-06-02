@@ -10,7 +10,7 @@ The app is far from bullet proof at this stage, if you want to see it work, try 
 
 Proof of Concept
 -------------------------
-![Screenshot taken Sunday, June 02, 2013](./2013-06-02.ProofOfConcept.png)
+![Screenshot taken Sunday, June 02, 2013](./2013-06-02.ProofOfConcept.half.png)
 
 Basic Polling Place Finder API
 ------------------------------
