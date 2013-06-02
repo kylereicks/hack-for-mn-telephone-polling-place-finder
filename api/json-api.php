@@ -13,10 +13,11 @@ if(!class_exists('JSON_API')){
     }
 
     private function __construct(){
+      include('settings.php');
       header('Content-Type: application/json');
       if(!empty($_GET['zip'])){
 
-        $db = $this->database_connect('mysql:dbname', 'user', 'password');
+        $db = $this->database_connect('mysql:dbname=' . DBNAME . ';host=' . HOST, USER, PASSWORD);
 
         $search = 'SELECT * FROM precinct_finder WHERE ' . $this->address_query();
         $precinct_data = $db->query($search);
@@ -33,10 +34,13 @@ if(!class_exists('JSON_API')){
     }
 
     private function address_query(){
+      $evenOdd = $_GET['housenumber'] % 2 === 0 ? 'E' : 'O';
       $output = '';
       $output .= !empty($_GET['zip']) ? 'Zip=\'' . $_GET['zip'] . '\'' : '';
       $output .= !empty($_GET['city']) ? ' AND City=\'' . $_GET['city'] . '\'' : '';
       $output .= !empty($_GET['street']) ? ' AND StreetAddr=\'' . $_GET['street'] . '\'' : '';
+      $output .= !empty($_GET['housenumber']) ? ' AND HouseNbrLo < \'' . $_GET['housenumber'] . '\' AND HouseNbrHi > \'' . $_GET['housenumber'] . '\'' : '';
+      $output .= !empty($_GET['housenumber']) ? ' AND (OddEven=\'' . $evenOdd . '\' OR OddEven=\'B\')' : '';
 
       return $output;
     }
